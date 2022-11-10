@@ -7,7 +7,7 @@
                                                                                                         
 
                   
-Creado para MEDAC Nevada. 1º DAM
+Creado para MEDAC Nevada. 2º DAM
                                                                                      
 
 ➤ Twitch: twitch.tv/mscasandra

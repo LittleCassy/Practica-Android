@@ -22,11 +22,11 @@
         app:layout_constraintVertical_bias="0.61" />
 
     <Button
-        android:id="@+id/btn_Store"
+        android:id="@+id/btn_Leaderboard"
         android:layout_width="163dp"
         android:layout_height="56dp"
         android:backgroundTint="@android:color/holo_blue_dark"
-        android:text="Store"
+        android:text="Ranking"
         app:icon="@drawable/ic_stat_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -29,6 +29,7 @@ public class LandingActivity extends AppCompatActivity {
         updateScreen();
 
         Button recycleBtn = findViewById(R.id.btn_Recycle);
+        Button leaderBoardBtn = findViewById(R.id.btn_Leaderboard);
         Button logOutBtn = findViewById(R.id.btn_LogOut);
 
         recycleBtn.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +45,14 @@ public class LandingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 ProfileManager.Reset();
                 Intent myIntent = new Intent(LandingActivity.this, MainActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+        leaderBoardBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(LandingActivity.this, LeaderboardActivity.class);
                 startActivity(myIntent);
             }
         });

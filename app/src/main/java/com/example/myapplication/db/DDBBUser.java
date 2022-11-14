@@ -9,6 +9,9 @@ import androidx.annotation.Nullable;
 
 import com.example.myapplication.data.ProfileManager;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 public class DDBBUser extends dbHelper {
     private Context context;
 
@@ -64,6 +67,23 @@ public class DDBBUser extends dbHelper {
             return true;
         }catch (Exception e){
             return false;
+        }
+    }
+
+    public ArrayList<User> selectRanking(){
+        dbHelper myDBHelp = new dbHelper(context);
+        SQLiteDatabase DB = myDBHelp.getWritableDatabase();
+        try{
+            Cursor myCursor = DB.rawQuery("SELECT nombre, puntos FROM " + TABLE_CONTACTOS + " ORDER BY puntos DESC LIMIT 4", null);
+            ArrayList<User> rankingArray = new ArrayList<>();
+            while(myCursor.moveToNext()){
+                rankingArray.add(new User(myCursor.getString(0), "",myCursor.getInt(1)));
+                System.out.println(myCursor.getString(0) + myCursor.getInt(1));
+            }
+            return rankingArray;
+        }catch (Exception e){
+            System.out.println("Error");
+            return null;
         }
     }
 

@@ -74,7 +74,7 @@ public class DDBBUser extends dbHelper {
         dbHelper myDBHelp = new dbHelper(context);
         SQLiteDatabase DB = myDBHelp.getWritableDatabase();
         try{
-            Cursor myCursor = DB.rawQuery("SELECT nombre, puntos FROM " + TABLE_CONTACTOS + " ORDER BY puntos DESC LIMIT 4", null);
+            Cursor myCursor = DB.rawQuery("SELECT nombre, puntos FROM " + TABLE_CONTACTOS + " ORDER BY puntos DESC LIMIT 3", null);
             ArrayList<User> rankingArray = new ArrayList<>();
             while(myCursor.moveToNext()){
                 rankingArray.add(new User(myCursor.getString(0), "",myCursor.getInt(1)));
